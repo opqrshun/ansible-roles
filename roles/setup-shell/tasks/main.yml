@@ -1,0 +1,17 @@
+
+
+
+# - name: install nix-shell 
+#   shell: |
+#     sh <(curl https://nixos.org/nix/install) --daemon
+  # become : yes
+
+- name: setupshell
+  shell: |
+    wget https://raw.githubusercontent.com/ttaki/nix-shell/master/cmd.nix
+    curl https://raw.githubusercontent.com/ttaki/dotfiles-shell/master/sample/setup.sh | bash
+    curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall
+
+     
+
+

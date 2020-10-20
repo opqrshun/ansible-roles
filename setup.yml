@@ -1,0 +1,26 @@
+
+- name: setup-dnf 
+  hosts: all 
+  remote_user: "{{user}}"
+  become: yes
+  roles:
+    - setup-dnf
+  tags: setup 
+
+- name: setup-shell 
+  hosts: all 
+  remote_user: "{{user}}"
+  roles:
+    - setup-shell
+  tags: setup-shell 
+
+- name: setup Nginx
+  hosts: all 
+  remote_user: "{{user}}"
+  become: yes
+  roles:
+    - role: nginxinc.nginx
+  vars_files:
+    - config/{{nginx}}.yml
+  tags: ['nginx','all']
+

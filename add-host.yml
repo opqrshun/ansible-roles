@@ -1,0 +1,9 @@
+
+- name: add-host 
+  hosts: all 
+  remote_user: "{{user}}"
+  become: yes
+  roles:
+    - add-host
+  tags: add-host 
+
