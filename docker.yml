@@ -1,0 +1,9 @@
+
+- name: Create docker container 
+  hosts: all 
+  remote_user: "{{user}}"
+  # become: yes
+  roles:
+    - docker 
+  tags: docker 
+
