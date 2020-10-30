@@ -1,0 +1,9 @@
+
+- name: set swap (redhat)
+  hosts: all 
+  remote_user: "{{user}}"
+  become: yes
+  roles:
+    - set-swap 
+  tags: swap 
+

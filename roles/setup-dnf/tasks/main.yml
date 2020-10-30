@@ -59,3 +59,7 @@
       - httpd-tools # basic 認証の時必要
     state: present
 
+- name: Install common dependencies
+  dnf: 
+    name:
+     - podman 

@@ -1,4 +1,14 @@
 
+- name: setup Nginx
+  hosts: all 
+  remote_user: "{{user}}"
+  become: yes
+  roles:
+    - role: nginxinc.nginx
+  vars_files:
+    - config/{{nginx}}.yml
+  tags: ['nginx']
+
 - name: add-host 
   hosts: all 
   remote_user: "{{user}}"

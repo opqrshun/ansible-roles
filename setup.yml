@@ -5,22 +5,21 @@
   become: yes
   roles:
     - setup-dnf
-  tags: setup 
+  tags: dnf 
 
 - name: setup-shell 
   hosts: all 
   remote_user: "{{user}}"
   roles:
     - setup-shell
-  tags: setup-shell 
+  tags: shell 
 
-- name: setup Nginx
+- name: setup-amazonlinux2 
   hosts: all 
   remote_user: "{{user}}"
   become: yes
   roles:
-    - role: nginxinc.nginx
-  vars_files:
-    - config/{{nginx}}.yml
-  tags: ['nginx','all']
+    - setup-amazonlinux2
+  tags: amazonlinux2 
+
 
