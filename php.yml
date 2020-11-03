@@ -1,9 +1,8 @@
 
-- name: add-host 
+- name: setup php.ini 
   hosts: all 
   remote_user: "{{user}}"
   become: yes
   roles:
-    - add-host
-  tags: add-host 
-
+    - php 
+  tags: php 
