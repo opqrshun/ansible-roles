@@ -2,14 +2,14 @@
 
 - name: set nginx template 
   template: 
-    src: "server_name.conf" 
+    src: "{{type}}.conf" 
     dest: "/etc/nginx/conf.d"
     owner: nginx
 
 
 - name: rename conf
   shell: |
-    mv /etc/nginx/conf.d/server_name.conf /etc/nginx/conf.d/{{server_name}}.conf
+    mv /etc/nginx/conf.d/{{type}}.conf /etc/nginx/conf.d/{{server_name}}.conf
   become : yes
 
 
