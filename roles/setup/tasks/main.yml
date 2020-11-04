@@ -1,5 +1,15 @@
 ---
-- include: "setup-ContOS7.yml"
+- include: "setup-CentOS7.yml"
   when:
       - ansible_facts['distribution'] == "CentOS"
       - ansible_facts['distribution_major_version'] == "7"
+
+- include: "setup-CentOS8.yml"
+  when:
+      - ansible_facts['distribution'] == "CentOS"
+      - ansible_facts['distribution_major_version'] == "8"
+
+- include: "setup-Amazonlinux2.yml"
+  when:
+      - ansible_facts['distribution'] == "Amazon"
+      # - ansible_facts['distribution_major_version'] == "2"
