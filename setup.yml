@@ -1,11 +1,10 @@
 
-- name: setup-dnf 
+- name: setup 
   hosts: all 
   remote_user: "{{user}}"
   become: yes
   roles:
-    - setup-dnf
-  tags: dnf 
+    - setup
 
 - name: setup-shell 
   hosts: all 
@@ -14,12 +13,12 @@
     - setup-shell
   tags: shell 
 
-- name: setup-amazonlinux2 
-  hosts: all 
-  remote_user: "{{user}}"
-  become: yes
-  roles:
-    - setup-amazonlinux2
-  tags: amazonlinux2 
+# - name: setup-amazonlinux2 
+#   hosts: all 
+#   remote_user: "{{user}}"
+#   become: yes
+#   roles:
+#     - setup-amazonlinux2
+#   tags: amazonlinux2 
 
 
