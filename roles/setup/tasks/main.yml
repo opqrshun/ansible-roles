@@ -13,3 +13,7 @@
   when:
       - ansible_facts['distribution'] == "Amazon"
       # - ansible_facts['distribution_major_version'] == "2"
+      #
+- include: "setup-Ubuntu.yml"
+  when:
+      - ansible_facts['distribution'] == "Ubuntu"

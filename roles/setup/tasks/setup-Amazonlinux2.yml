@@ -15,7 +15,7 @@
     state: latest
 
 - name: install dev package
-  dnf: 
+  yum: 
     name:
       - tmux
       - neovim
