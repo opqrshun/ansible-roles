@@ -18,7 +18,7 @@
   yum: 
     name:
       - tmux
-      - neovim
+      # - neovim
       - git
       - mriadb
       - go
