@@ -26,7 +26,6 @@
   vars:
     packages:
     - python-setuptools
-    - selinux
     - zsh
     - tmux
     - git
