@@ -1,0 +1,5 @@
+
+- name: upload docker file 
+  copy: 
+    src: ../files/wordpress
+    dest: /home/{{user}}/
