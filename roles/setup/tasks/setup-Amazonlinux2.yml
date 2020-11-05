@@ -20,7 +20,7 @@
       - tmux
       # - neovim
       - git
-      - mriadb
+      - mariadb
       - go
 
 - name: setupshell
