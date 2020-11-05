@@ -1,0 +1,6 @@
+- name: upload-dockerfile 
+  hosts: all 
+  remote_user: "{{user}}"
+  become: yes
+  roles:
+    - role: upload-dockerfile 
