@@ -1,4 +1,12 @@
 
+- name: Install certbot dependencies
+  yum: 
+    name:
+     - certbot
+     - python2-certbot-nginx 
+  when:
+      - ansible_facts['distribution'] == "CentOS"
+      - ansible_facts['distribution_major_version'] == "7"
 
 - name: set nginx template 
   template: 
