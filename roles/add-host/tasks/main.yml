@@ -4,6 +4,7 @@
     name:
      - certbot
      - python2-certbot-nginx 
+    state: present
   when:
       - ansible_facts['distribution'] == "CentOS"
       - ansible_facts['distribution_major_version'] == "7"
