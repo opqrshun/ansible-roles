@@ -7,3 +7,25 @@
     - add-host
   tags: add-host 
 
+
+- name: add-host 
+  hosts: all 
+  remote_user: "{{user}}"
+  become: yes
+  vars:
+    certbot_create_standalone_stop_services:
+      - nginx
+    certbot_certs:
+      - domains:
+          - "{{server_name}}" 
+    certbot_auto_renew_user: "{{user}}" 
+    certbot_auto_renew_minute: "20"
+    certbot_auto_renew_hour: "5"
+    certbot_create_if_missing: true 
+    certbot_create_method: standalone
+
+  roles:
+    - geerlingguy.certbot
+  tags: add-host 
+
+
