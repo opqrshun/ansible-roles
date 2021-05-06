@@ -1,0 +1,28 @@
+- name: Install common dependencies
+  yum: 
+    name:
+     - yum-cron
+    state: present
+
+- name: install pure-ftpd 
+  yum:
+    name: 
+      - pure-ftpd
+    enablerepo: "epel"
+    state: present
+
+- name: backup pure-ftpd.conf
+  shell: |
+    mv /etc/pure-ftpd/pure-ftpd.conf /etc/pure-ftpd/pure-ftpd.conf_{{ lookup('pipe', 'date +%Y-%m-%dT%H:%M:%S') }}
+  become : yes
+
+- name: set pure-ftpd.conf 
+  template: 
+    src: "pure-ftpd.conf" 
+    dest: "/etc/pure-ftpd"
+    owner: root
+
+- name: resterted pure-ftpd
+  systemd:
+    state: restarted
+    name: pure-ftpd

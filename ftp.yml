@@ -1,0 +1,13 @@
+- name: setup 
+  hosts: all 
+  remote_user: "{{user}}"
+  become: yes
+  roles:
+    - setup
+
+- name: setup ftp
+  hosts: all 
+  remote_user: "{{user}}"
+  become: yes
+  roles:
+    - ftp
