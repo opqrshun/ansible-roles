@@ -1,0 +1,5 @@
+---
+- include: "setup-ftp-cnetos7.yml"
+  when:
+      - ansible_facts['distribution'] == "CentOS"
+      - ansible_facts['distribution_major_version'] == "7"
